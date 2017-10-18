@@ -14,7 +14,9 @@ export function activate(context: vscode.ExtensionContext) {
         if(typeof vscode.window.activeTextEditor != 'undefined') {
             let editor = vscode.window.activeTextEditor
             if(editor.document.getText(editor.selection) !== '') {
-                
+                editor.edit((edit) => {
+                    edit.replace(editor.selection, 'gglife')
+                })
             } else {
                 vscode.window.showErrorMessage('Select Something to convert to RGBA')
             }
