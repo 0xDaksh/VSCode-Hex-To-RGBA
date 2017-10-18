@@ -6,7 +6,7 @@
     "publisher": "dakshmiglani",
     "author": "Daksh Miglani <hello@dak.sh>",
     "license": "MIT",
-    "repository": "https://github.com/DakshMiglani/hex-to-rgba.git",
+    "repository": "https://github.com/DakshMiglani/VSCode-Hex-To-RGBA.git",
     "engines": {
         "vscode": "^1.17.0"
     },
