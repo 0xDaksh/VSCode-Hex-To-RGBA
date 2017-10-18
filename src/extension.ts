@@ -2,6 +2,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import * as HexToRGBA from 'hex-rgba'
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -15,7 +16,12 @@ export function activate(context: vscode.ExtensionContext) {
             let editor = vscode.window.activeTextEditor
             if(editor.document.getText(editor.selection) !== '') {
                 editor.edit((edit) => {
-                    edit.replace(editor.selection, 'gglife')
+                    let selectedText = editor.document.getText(editor.selection)
+                    let opacity:any = selectedText.split('_')[1] || "100" // else use 100 % accuracy.
+                    if(opacity !== "100") {
+                        selectedText = selectedText.split('_')[0]
+                    }
+                    edit.replace(editor.selection, HexToRGBA(selectedText, opacity))
                 })
             } else {
                 vscode.window.showErrorMessage('Select Something to convert to RGBA')
