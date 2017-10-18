@@ -17,7 +17,7 @@ export function activate(context: vscode.ExtensionContext) {
             let editor = vscode.window.activeTextEditor
             if(editor.document.getText(editor.selection) !== '') {
                 editor.edit((edit) => {
-                    let selectedText = editor.document.getText(editor.selection).split('_')[0] || editor.document.getText(editor.selection)
+                    let selectedText = editor.document.getText(editor.selection).split('_')[0]
                     let opacity:any = selectedText.split('_')[1] || "100" // else use 100 % accuracy.
                     edit.replace(editor.selection, HexToRGBA(selectedText, opacity))
                 })
