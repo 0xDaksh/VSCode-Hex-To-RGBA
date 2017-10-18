@@ -20,6 +20,14 @@
                 "command": "extension.convertToRGBA",
                 "title": "Convert Hex to RGBA"
             }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.convertToRGBA",
+                "key": "ctrl+alt+h",
+                "mac": "cmd+shift+c",
+                "when": "editorTextFocus"
+            }
         ]
     },
     "scripts": {
