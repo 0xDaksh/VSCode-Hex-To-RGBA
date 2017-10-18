@@ -2,7 +2,7 @@
     "name": "hex-to-rgba",
     "displayName": "hex-to-rgba",
     "description": "Hex-to-RGBA Allows designers to convert selected Hex Code to RGBA on VSCode easily.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "dakshmiglani",
     "author": "Daksh Miglani <hello@dak.sh>",
     "license": "MIT",
@@ -48,5 +48,6 @@
     },
     "dependencies": {
         "hex-rgba": "^1.0.1"
-    }
+    },
+    "icon": "https://i.imgur.com/5hRUxl2.png"
 }
