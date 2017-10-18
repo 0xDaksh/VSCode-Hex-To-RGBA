@@ -5,7 +5,7 @@
 ### Shortcuts
 #### converts selected text to RGBA
   - Windows/Linux: `ctrl-alt-h`
-  - MacOS: c`md-shift-c`
+  - MacOS: `cmd-shift-c`
 
 *Awesome Tip*: Postfix the opacity to the hex followed by `_` to add the opacity to the converted rgba.
 
