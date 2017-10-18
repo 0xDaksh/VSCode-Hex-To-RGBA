@@ -49,5 +49,5 @@
     "dependencies": {
         "hex-rgba": "^1.0.1"
     },
-    "icon": "https://i.imgur.com/5hRUxl2.png"
+    "icon": "icon.png"
 }
