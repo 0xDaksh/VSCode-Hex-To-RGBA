@@ -12,15 +12,13 @@ export function activate(context: vscode.ExtensionContext) {
     // The commandId parameter must match the command field in package.json
     let disposable = vscode.commands.registerCommand('extension.convertToRGBA', () => {
         // The code you place here will be executed every time your command is executed
+        console.log('Hey Hacker, Thanks for Checking Out Hex-to-RGBA. I hope you liked it and if you did, then please checkout my other OpenSource Projects. Find me at: https://dak.sh')
         if(typeof vscode.window.activeTextEditor != 'undefined') {
             let editor = vscode.window.activeTextEditor
             if(editor.document.getText(editor.selection) !== '') {
                 editor.edit((edit) => {
-                    let selectedText = editor.document.getText(editor.selection)
+                    let selectedText = editor.document.getText(editor.selection).split('_')[0] || editor.document.getText(editor.selection)
                     let opacity:any = selectedText.split('_')[1] || "100" // else use 100 % accuracy.
-                    if(opacity !== "100") {
-                        selectedText = selectedText.split('_')[0]
-                    }
                     edit.replace(editor.selection, HexToRGBA(selectedText, opacity))
                 })
             } else {
@@ -36,4 +34,5 @@ export function activate(context: vscode.ExtensionContext) {
 
 // this method is called when your extension is deactivated
 export function deactivate() {
+    vscode.window.showInformationMessage('Hex-to-RGBA has been Deactivated!')
 }
