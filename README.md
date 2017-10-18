@@ -1,65 +1,44 @@
-# hex-to-rgba README
+# hex-to-rgba package
 
-This is the README for your extension "hex-to-rgba". After writing up a brief description, we recommend including the following sections.
+> Hex-to-RGBA Allows designers to convert selected Hex Code to RGBA on VSCODE easily.
 
-## Features
+### Shortcuts
+#### converts selected text to RGBA
+  - Windows/Linux: `ctrl-alt-h`
+  - MacOS: c`md-shift-c`
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+*Awesome Tip*: Postfix the opacity to the hex followed by `_` to add the opacity to the converted rgba.
 
-For example if there is an image subfolder under your extension project workspace:
+Example:
+`#333333_86` to generate `rgba(51, 51, 51, 0.86)`.
 
-\!\[feature X\]\(images/feature-x.png\)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+----
 
-## Requirements
+![A screenshot of Hex-to-RGBA on VSCODE Using Some Pero Pero Shortcuts.](https://media.giphy.com/media/3ov9k5VY5l67GiGxpu/giphy.gif)
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### Tests
 
-## Extension Settings
+```
+background: #ffb300;
+background: #ffb8f0_29;
+background: #000_52;
+background: #333333_19;
+background: #000000_6;
+background: #fff_96;
+background: #e3e3e3;
+background: #eee_08;
+background: #f3f3f3_81;
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+\\ above tests simultaneously converted to:
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+background: rgba(255, 179 ,0, 1);
+background: rgba(255, 184 ,240, 0.29);
+background: rgba(0, 0 ,82, 0.52);
+background: rgba(51, 51 ,51, 0.19);
+background: rgba(0, 0 ,0, 0.6);
+background: rgba(255, 15 ,150, 0.96);
+background: rgba(227, 227 ,227, 1);
+background: rgba(238, 14 ,8, 0.08);
+background: rgba(243, 243 ,243, 0.81);
+```
