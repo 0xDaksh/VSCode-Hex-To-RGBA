@@ -1,6 +1,6 @@
-# hex-to-rgba package
+# Hex-To-RGBA Extension
 
-> Hex-to-RGBA Allows designers to convert selected Hex Code to RGBA on VSCODE easily.
+> Hex-to-RGBA Allows designers to convert selected Hex Code to RGBA on Visual Studio Code easily.
 
 ### Shortcuts
 #### converts selected text to RGBA
