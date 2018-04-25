@@ -18,7 +18,8 @@ export function activate(context: vscode.ExtensionContext) {
             if(editor.document.getText(editor.selection) !== '') {
                 editor.edit((edit) => {
                     let value =  editor.document.getText(editor.selection);
-                    edit.replace(editor.selection, HexToRGBA(value.split('_')[0], value.split('_')[1]));
+                    let opacity = value.split('_')[1];
+                    edit.replace(editor.selection, HexToRGBA(value.split('_')[0], typeof opacity !== 'undefined' ? opacity : 100));
                 })
             } else {
                 vscode.window.showErrorMessage('Select Something to convert to RGBA')
