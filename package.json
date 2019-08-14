@@ -14,7 +14,9 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:extension.convertToRGBA"
+    "onCommand:extension.convertToRGBA",
+    "onCommand:extension.convertToHEX",
+    "onCommand:extension.toggleHEX"
   ],
   "main": "./out/extension",
   "contributes": {
@@ -22,6 +24,14 @@
       {
         "command": "extension.convertToRGBA",
         "title": "Convert Hex to RGBA"
+      },
+      {
+        "command": "extension.convertToHEX",
+        "title": "Convert RGBA to HEX"
+      },
+      {
+        "command": "extension.toggleHEX",
+        "title": "Toggle between HEX and RGBA"
       }
     ],
     "keybindings": [
