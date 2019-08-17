@@ -1,16 +1,30 @@
-"use strict";
+'use strict';
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-import * as vscode from "vscode";
-import * as HexAndRgba from "hex-and-rgba";
+import * as vscode from 'vscode';
+import { hexToRgba, rgbaToHex, toggleHexRgba } from './converter';
 
-const HexToRgba = HexAndRgba.hexToRgba;
-const converter = (hex, opacity) => {
-  let rgba = HexToRgba(hex);
-  if (opacity) {
-    rgba[rgba.length - 1] = opacity / 100;
+const applyFnToSelections = fn => {
+  console.log(
+    'Hey Hacker, Thanks for Checking Out Hex-to-RGBA. I hope you liked it and if you did, then please checkout my other OpenSource Projects. Find me at: https://dak.sh'
+  );
+
+  if (vscode.window.activeTextEditor == null) {
+    vscode.window.showErrorMessage('Please Open up a File to Edit.');
+    return;
   }
-  return `rgba(${rgba[0]},${rgba[1]},${rgba[2]},${rgba[3].toPrecision(4)})`;
+
+  const editor = vscode.window.activeTextEditor;
+  const applyFnToSelection = (edit: vscode.TextEditorEdit) => (
+    s: vscode.Selection
+  ) => {
+    if (s.isEmpty) return;
+    const value = editor.document.getText(s);
+    edit.replace(s, fn(value));
+  };
+  editor.edit(edit => {
+    editor.selections.forEach(applyFnToSelection(edit));
+  });
 };
 
 // this method is called when your extension is activated
@@ -19,37 +33,27 @@ export function activate(context: vscode.ExtensionContext) {
   // The command has been defined in the package.json file
   // Now provide the implementation of the command with  registerCommand
   // The commandId parameter must match the command field in package.json
-  let disposable = vscode.commands.registerCommand(
-    "extension.convertToRGBA",
-    () => {
-      // The code you place here will be executed every time your command is executed
-      console.log(
-        "Hey Hacker, Thanks for Checking Out Hex-to-RGBA. I hope you liked it and if you did, then please checkout my other OpenSource Projects. Find me at: https://dak.sh"
-      );
-      if (typeof vscode.window.activeTextEditor != "undefined") {
-        let editor = vscode.window.activeTextEditor;
-        if (editor.document.getText(editor.selection) !== "") {
-          editor.edit(edit => {
-            let value = editor.document.getText(editor.selection);
-            let opacity = value.split("_")[1];
-            edit.replace(
-              editor.selection,
-              converter(value.split("_")[0], opacity)
-            );
-          });
-        } else {
-          vscode.window.showErrorMessage("Select Something to convert to RGBA");
-        }
-      } else {
-        vscode.window.showErrorMessage("Please Open up a File to Edit.");
-      }
-    }
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand('extension.convertToRGBA', () => {
+      applyFnToSelections(hexToRgba);
+    })
   );
 
-  context.subscriptions.push(disposable);
+  context.subscriptions.push(
+    vscode.commands.registerCommand('extension.convertToHEX', () => {
+      applyFnToSelections(rgbaToHex);
+    })
+  );
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand('extension.toggleHEX', () => {
+      applyFnToSelections(toggleHexRgba);
+    })
+  );
 }
 
 // this method is called when your extension is deactivated
 export function deactivate() {
-  vscode.window.showInformationMessage("Hex-to-RGBA has been Deactivated!");
+  vscode.window.showInformationMessage('Hex-to-RGBA has been Deactivated!');
 }
