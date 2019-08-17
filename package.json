@@ -48,7 +48,7 @@
         "when": "editorTextFocus"
       },
       {
-        "command": "extension.toggleHex",
+        "command": "extension.toggleHEX",
         "key": "ctrl+shift+t",
         "mac": "cmd+shift+t",
         "when": "editorTextFocus"
