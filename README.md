@@ -1,4 +1,8 @@
 # Hex-To-RGBA Extension
+![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/dakshmiglani.hex-to-rgba?style=for-the-badge)
+![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/dakshmiglani.hex-to-rgba?style=for-the-badge)
+![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/dakshmiglani.hex-to-rgba?style=for-the-badge)
+![Visual Studio Marketplace Rating (Stars)](https://img.shields.io/visual-studio-marketplace/stars/dakshmiglani.hex-to-rgba?style=for-the-badge)
 
 > Hex-to-RGBA Allows designers to convert selected Hex Code to RGBA and vice-versa.
 
