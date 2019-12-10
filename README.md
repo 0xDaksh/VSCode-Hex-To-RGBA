@@ -1,8 +1,8 @@
 # Hex-To-RGBA Extension
 
-[![Build Status](https://travis-ci.com/DakshMiglani/VSCode-Hex-To-RGBA.svg?branch=master)](https://travis-ci.com/DakshMiglani/VSCode-Hex-To-RGBA)
-
 > Hex-to-RGBA Allows designers to convert selected Hex Code to RGBA and vice-versa.
+
+![demo gif](https://i.imgur.com/SBRSu4B.gif)
 
 ### Shortcuts
 #### converts selected text to RGBA
