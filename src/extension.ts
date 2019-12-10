@@ -5,10 +5,6 @@ import * as vscode from 'vscode';
 import { hexToRgba, rgbaToHex, toggleHexRgba } from './converter';
 
 const applyFnToSelections = fn => {
-  console.log(
-    'Hey Hacker, Thanks for Checking Out Hex-to-RGBA. I hope you liked it and if you did, then please checkout my other OpenSource Projects. Find me at: https://dak.sh'
-  );
-
   if (vscode.window.activeTextEditor == null) {
     vscode.window.showErrorMessage('Please Open up a File to Edit.');
     return;
