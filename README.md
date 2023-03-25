@@ -17,7 +17,7 @@
   - MacOS: `cmd-alt-h`
 #### Toggle between hex and rgba
   - Windows/Linux: `ctrl-shift-t`
-  - MacOS: `ctrl-shift-t`
+  - MacOS: `cmd-shift-t`
 
 *Awesome Tip*: Postfix the opacity to the hex followed by `_` to add the opacity to the converted rgba.
 
